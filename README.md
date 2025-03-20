@@ -1,4 +1,4 @@
-a# HAProxy DataPlane API - Standalone Edition
+# HAProxy DataPlane API - Standalone Edition
 
 <p align="right">
   <a href="https://www.buymeacoffee.com/telxey" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-black.png" alt="Buy Me A Coffee" height="41" width="174"></a>
