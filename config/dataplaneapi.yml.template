@@ -1,0 +1,65 @@
+# HAProxy DataPlane API Configuration Template (Standalone Version)
+# Environment variables will be substituted at container startup
+
+# Core Configuration
+# Note: config_file and haproxy_binary are still required even in standalone mode
+# as DataPlane API needs to know where these resources are for management
+config_file: ${CONFIG_FILE:-/etc/haproxy/haproxy.cfg}
+haproxy_binary: ${HAPROXY_BIN:-/usr/sbin/haproxy}
+
+# These settings control interaction with an external HAProxy instance
+reload_delay: ${RELOAD_DELAY:-5}
+reload_cmd: "${RELOAD_CMD:-echo 'Reload would be executed on external HAProxy'}"
+restart_cmd: "${RESTART_CMD:-echo 'Restart would be executed on external HAProxy'}"
+master_runtime: ${MASTER_RUNTIME:-/var/run/haproxy/haproxy.sock}
+
+# Configuration management settings
+reload_retention: ${RELOAD_RETENTION:-1}
+transaction_dir: ${TRANSACTION_DIR:-/tmp/haproxy}
+backups_number: ${BACKUPS_NUMBER:-3}
+backups_dir: ${BACKUPS_DIR:-/etc/haproxy/backups}
+show_system_info: ${SHOW_SYSTEM_INFO:-true}
+
+# Resource Directories 
+resources:
+  maps_dir: ${MAPS_DIR:-/etc/haproxy/maps}
+  ssl_certs_dir: ${SSL_CERTS_DIR:-/etc/haproxy/ssl}
+  spoe_dir: ${SPOE_DIR:-/etc/haproxy/spoe}
+  spoe_transaction_dir: ${SPOE_TRANSACTION_DIR:-/tmp/spoe-haproxy}
+
+# API Configuration
+api:
+  host: ${API_HOST:-*******}
+  port: ${API_PORT:-5555}
+  user: ${API_USER:-admin}
+  password: ${API_PASSWORD:-mypassword}
+  
+  # API TLS Configuration (optional)
+  tls:
+    enabled: ${API_TLS_ENABLED:-false}
+    cert: ${API_TLS_CERT:-}
+    key: ${API_TLS_KEY:-}
+
+# Advanced Settings
+userlist_file: ${USERLIST_FILE:-}
+fid: ${FID_FILE:-}
+update_map_files: ${UPDATE_MAP_FILES:-false}
+update_map_files_period: ${UPDATE_MAP_FILES_PERIOD:-10}
+cluster_tls_dir: ${CLUSTER_TLS_DIR:-}
+master_worker_mode: ${MASTER_WORKER_MODE:-false}
+max_open_transactions: ${MAX_OPEN_TRANSACTIONS:-20}
+disable_inotify: ${DISABLE_INOTIFY:-false}
+
+# Standalone Mode Extensions
+# Set this to true if HAProxy is running in a different container/host
+external_haproxy: ${EXTERNAL_HAPROXY:-true}
+# External HAProxy connection details (for socket or HTTP API connections)
+external_haproxy_host: ${EXTERNAL_HAPROXY_HOST:-}
+external_haproxy_port: ${EXTERNAL_HAPROXY_PORT:-}
+
+# Logging Configuration
+log:
+  log_to: ${LOG_TO:-stdout}
+  log_file: ${LOG_FILE:-/var/log/dataplaneapi/dataplaneapi.log}
+  log_level: ${LOG_LEVEL:-info}
+  log_format: ${LOG_FORMAT:-text}

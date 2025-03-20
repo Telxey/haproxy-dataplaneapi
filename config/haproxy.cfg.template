@@ -1,0 +1,30 @@
+# HAProxy Configuration Template (Placeholder for DataPlane API)
+# This file serves as a template for the DataPlane API to manage.
+# In standalone mode, DataPlane API will use this to generate and manage
+# configurations for an external HAProxy instance.
+
+# Global settings
+global
+    # Logging configuration
+    log stdout format raw local0 info
+    
+    # Basic socket for runtime API
+    stats socket /var/run/haproxy/haproxy.sock mode 666 level admin expose-fd listeners
+    stats timeout 30s
+    
+    # User and group settings
+    user haproxy
+    group haproxy
+
+# Default settings
+defaults
+    mode http
+    log global
+    option httplog
+    option dontlognull
+    timeout connect 5s
+    timeout client 30s
+    timeout server 30s
+
+# This is a minimal configuration required for DataPlane API to work with
+# Actual configuration will be managed through the API
