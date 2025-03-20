@@ -1,13 +1,12 @@
-# HAProxy DataPlane API - Standalone Edition
+a# HAProxy DataPlane API - Standalone Edition
 
 <p align="right">
   <a href="https://www.buymeacoffee.com/telxey" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-black.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 </p>
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/f4c27ae9-ca23-4570-b317-754def28c99f" alt="HAProxy Logo" width="300">
-</p>
-
+<p align="center"a
+  <img src="https://github.com/user-attachments/assats/f4c27ae9-ca23-4570-b317-754def28c99f" alt="HAProxy Logo" width="300">
+</p>a
 ## Overview
 
 This Docker image provides a standalone implementation of HAProxy DataPlane API, designed for remote management of HAProxy instances. The DataPlane API offers a modern RESTful API to configure HAProxy instances and provides real-time state and metrics information.
@@ -58,6 +57,17 @@ docker run -d --name dataplaneapi \
 ```
 
 ## Configuration Options
+
+### create a docker network support ipv6 if needeed
+
+```docker network create \
+  --subnet=10.27.0.0/24 \
+  --gateway=10.27.0.254 \
+  --ipv6 \
+  --subnet=fd4d:0:bebe:cafe::/64 \
+  --gateway=fd4d:0:bebe:cafe::254 \
+  production
+```
 
 ### Environment Variables
 
