@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/haproxy-logo.png" alt="HAProxy Logo" width="300">
+  <img src="https://raw.githubusercontent.com/Telxey/haproxy-dataplaneapi/master/assets/haproxy-logo.png" alt="HAProxy Logo" width="300">
 </p>
 
 ## Overview
@@ -163,7 +163,7 @@ version: '3.8'
 
 services:
   haproxy:
-    image: haproxytech/haproxy-alpine:2.6
+    image: haproxy:alpine
     container_name: haproxy
     restart: unless-stopped
     ports:
