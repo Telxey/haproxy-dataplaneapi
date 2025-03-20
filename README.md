@@ -4,9 +4,10 @@
   <a href="https://www.buymeacoffee.com/telxey" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-black.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 </p>
 
-<p align="center"a
-  <img src="https://github.com/user-attachments/assats/f4c27ae9-ca23-4570-b317-754def28c99f" alt="HAProxy Logo" width="300">
-</p>a
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f4c27ae9-ca23-4570-b317-754def28c99f" alt="HAProxy Logo" width="400">
+</p>
+
 ## Overview
 
 This Docker image provides a standalone implementation of HAProxy DataPlane API, designed for remote management of HAProxy instances. The DataPlane API offers a modern RESTful API to configure HAProxy instances and provides real-time state and metrics information.
