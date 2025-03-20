@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Telxey/haproxy-dataplaneapi/master/assets/haproxy-logo.png" alt="HAProxy Logo" width="300">
+  <img src="./assets/haproxy-logo-new.png" alt="HAProxy Logo" width="300">
 </p>
 
 ## Overview
