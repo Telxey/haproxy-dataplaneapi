@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/haproxy-logo-new.png" alt="HAProxy Logo" width="300">
+  <img src="https://github.com/user-attachments/assets/f4c27ae9-ca23-4570-b317-754def28c99f" alt="HAProxy Logo" width="300">
 </p>
 
 ## Overview
